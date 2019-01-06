@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/checkboxes-in-react-16/precache-manifest.de61ca1b0959244182c91c6461fda4ab.js"
+  "/checkboxes-in-react-16/precache-manifest.72040d953636359e0f6cdb7029e27fee.js"
 );
 
 workbox.clientsClaim();
