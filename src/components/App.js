@@ -14,6 +14,30 @@ class App extends Component {
     )
   };
 
+  selectAll = () => {
+    Object.keys(this.state.checkboxes).forEach(checkbox => {
+      // BONUS: Can you explain why we pass updater function to setState instead of an object?
+      this.setState(prevState => ({
+        checkboxes: {
+          ...prevState.checkboxes,
+          [checkbox]: true
+        }
+      }));
+    });
+  };
+
+  selectNone = () => {
+    Object.keys(this.state.checkboxes).forEach(checkbox => {
+      // BONUS: Can you explain why we pass updater function to setState instead of an object?
+      this.setState(prevState => ({
+        checkboxes: {
+          ...prevState.checkboxes,
+          [checkbox]: false
+        }
+      }));
+    });
+  };
+
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
 
@@ -45,30 +69,6 @@ class App extends Component {
   );
 
   createCheckboxes = () => OPTIONS.map(this.createCheckbox);
-
-  selectAll = () => {
-    Object.keys(this.state.checkboxes).forEach(checkbox => {
-      // BONUS: Can you explain why we pass updater function to setState instead of an object?
-      this.setState(prevState => ({
-        checkboxes: {
-          ...prevState.checkboxes,
-          [checkbox]: true
-        }
-      }));
-    });
-  };
-
-  selectNone = () => {
-    Object.keys(this.state.checkboxes).forEach(checkbox => {
-      // BONUS: Can you explain why we pass updater function to setState instead of an object?
-      this.setState(prevState => ({
-        checkboxes: {
-          ...prevState.checkboxes,
-          [checkbox]: false
-        }
-      }));
-    });
-  };
 
   render() {
     return (
