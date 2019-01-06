@@ -28,7 +28,7 @@ class App extends Component {
 
   selectAll = () => this.selectAllCheckboxes(true);
 
-  selectNone = () => this.selectAllCheckboxes(false);
+  deselectAll = () => this.selectAllCheckboxes(false);
 
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
@@ -81,9 +81,9 @@ class App extends Component {
                 <button
                   type="button"
                   className="btn btn-outline-primary mr-2"
-                  onClick={this.selectNone}
+                  onClick={this.deselectAll}
                 >
-                  Select None
+                  Deselect All
                 </button>
                 <button type="submit" className="btn btn-primary">
                   Save
