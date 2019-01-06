@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/checkboxes-in-react-16/static/js/1.91caeaab.chunk.js"
   },
   {
-    "revision": "14b939cef66ccc3a8330731ff55f136a",
+    "revision": "1920acf51cf4ba5a34437af33472ebc7",
     "url": "/checkboxes-in-react-16/index.html"
   }
 ];
