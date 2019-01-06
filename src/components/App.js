@@ -4,19 +4,15 @@ import Checkbox from "./Checkbox";
 const OPTIONS = ["One", "Two", "Three"];
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checkboxes: OPTIONS.reduce(
-        (options, option) => ({
-          ...options,
-          [option]: false
-        }),
-        {}
-      )
-    };
-  }
+  state = {
+    checkboxes: OPTIONS.reduce(
+      (options, option) => ({
+        ...options,
+        [option]: false
+      }),
+      {}
+    )
+  };
 
   handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
@@ -39,21 +35,16 @@ class App extends Component {
       });
   };
 
-  createCheckbox = checkbox => {
-    const [label, isSelected] = checkbox;
+  createCheckbox = option => (
+    <Checkbox
+      label={option}
+      isSelected={this.state.checkboxes[option]}
+      onCheckboxChange={this.handleCheckboxChange}
+      key={option}
+    />
+  );
 
-    return (
-      <Checkbox
-        label={label}
-        isSelected={isSelected}
-        onCheckboxChange={this.handleCheckboxChange}
-        key={label}
-      />
-    );
-  };
-
-  createCheckboxes = () =>
-    Object.entries(this.state.checkboxes).map(this.createCheckbox);
+  createCheckboxes = () => OPTIONS.map(this.createCheckbox);
 
   selectAll = () => {
     Object.keys(this.state.checkboxes).forEach(checkbox => {
